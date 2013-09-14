@@ -1,0 +1,26 @@
+.loader
+{
+	position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index=2;
+}
+
+.ajaxcontent
+{
+	position:relative;
+}
+
+body{background-color: #F7F7F6;}
+.login{padding-top: 5%;}
+.center{float: none; margin-left: auto; margin-right: auto;}
+
+.form-spaced{margin-bottom : 10px;}
+
+.close-custom
+{
+	float: none;
+}
