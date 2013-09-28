@@ -13,7 +13,7 @@ class Model_Community extends Model {
 		if(!is_null($label))
 		{
 			$db = Database::instance();
-			$request = 'INSERT INTO communities (label,fk_user) VALUES(\''.$label.'\',$userID)';
+			$request = 'INSERT INTO communities (label,fk_user) VALUES(\''.$label.'\','.$userID.')';
 			$query = $db->query(Database::INSERT,$request);
 			if(!is_null($members))
 			{
