@@ -13,7 +13,7 @@ class Model_Community extends Model {
 		if(!is_null($label))
 		{
 			$db = Database::instance();
-			$request = 'INSERT INTO communities (label,fk_user) VALUES(\''.$label.'\')';
+			$request = 'INSERT INTO communities (label,fk_user) VALUES(\''.$label.'\',$userID)';
 			$query = $db->query(Database::INSERT,$request);
 			if(!is_null($members))
 			{
@@ -84,7 +84,7 @@ class Model_Community extends Model {
 		$db = Database::instance();
 		$userID =  Auth::instance()->get_user()->id;
 		$request = 'SELECT c.label, c.id FROM communities c LEFT JOIN community_members cm ON c.id=cm.fk_community ';
-		$request.= ' AND cm.fk_user='.$userID;
+		$request.= ' WHERE cm.fk_community='.$userID;
 		
 
 		$query = $db->query(Database::SELECT,$request);
