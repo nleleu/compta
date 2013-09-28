@@ -4,13 +4,13 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
- <?php echo html::style('bootstrap/css/bootstrap.min.css'); ?>
- <?php echo html::style('style.css'); ?>
+ <?php echo HTML::style('bootstrap/css/bootstrap.min.css'); ?>
+ <?php echo HTML::style('style.css'); ?>
 
 
 
-    <?php echo html::script('flot/jquery.js'); ?>
-    <?php echo html::script('bootstrap/js/bootstrap.js'); ?>
+    <?php echo HTML::script('flot/jquery.js'); ?>
+    <?php echo HTML::script('bootstrap/js/bootstrap.js'); ?>
 
   </head>
   <body>
@@ -45,7 +45,7 @@
               </div>
           </div>
            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            <span class="col-md-offset-8"><?php echo html::anchor('Welcome/createAccount','Créer un compte'); ?></span>
+            <span class="col-md-offset-8"><?php echo HTML::anchor('Welcome/createAccount','Créer un compte'); ?></span>
             </form>
         </div>
     </div>

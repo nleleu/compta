@@ -4,18 +4,18 @@
     <title>Bootstrap 101 Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
- <?php echo html::style('bootstrap/css/bootstrap.min.css'); ?>
- <?php echo html::style('style.css'); ?>
- <?php echo html::style('datatables/media/css/jquery.dataTables.css
+ <?php echo HTML::style('bootstrap/css/bootstrap.min.css'); ?>
+ <?php echo HTML::style('style.css'); ?>
+ <?php echo HTML::style('datatables/media/css/jquery.dataTables.css
 '); ?>
 
 
-    <?php echo html::script('flot/jquery.js'); ?>
-    <?php echo html::script('flot/jquery.flot.js'); ?>
-    <?php echo html::script('flot/jquery.flot.pie.js'); ?>
-    <?php echo html::script('flot/jquery.flot.time.js'); ?>
-    <?php echo html::script('uncompressed_tooltip.js'); ?>
-    <?php echo html::script('datatables/media/js/jquery.dataTables.js'); ?>
+    <?php echo HTML::script('flot/jquery.js'); ?>
+    <?php echo HTML::script('flot/jquery.flot.js'); ?>
+    <?php echo HTML::script('flot/jquery.flot.pie.js'); ?>
+    <?php echo HTML::script('flot/jquery.flot.time.js'); ?>
+    <?php echo HTML::script('uncompressed_tooltip.js'); ?>
+    <?php echo HTML::script('datatables/media/js/jquery.dataTables.js'); ?>
 
 
 <script>
@@ -217,8 +217,8 @@ $(window).load(function(){
    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <?php echo html::script('bootstrap/js/bootstrap.min.js'); ?>
-    <?php echo html::script('compta.js'); ?>
+    <?php echo HTML::script('bootstrap/js/bootstrap.min.js'); ?>
+    <?php echo HTML::script('compta.js'); ?>
 
     </div>
     
