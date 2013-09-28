@@ -180,7 +180,7 @@ class Controller_Welcome extends Controller {
 				$user->email = Request::current()->post('email');
 				$user->password = Request::current()->post('password');
 				$user->save();
-				$user->add('roles', ORM::factory('role', array('name' => 'login')));
+				$user->add('roles', ORM::factory('Role', array('name' => 'login')));
 				if(Auth::instance()->login(Request::current()->post('username'), Request::current()->post('password'), true))
 					$this->redirect('');
 			
