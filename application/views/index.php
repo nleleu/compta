@@ -34,7 +34,7 @@ function init()
 
   if(breadcrumb['categoryName']===undefined)
   {
-    getAjaxData("plotarea","http://localhost/compta/welcome/test",t,makeMeAPie);
+    getAjaxData("plotarea","/compta/welcome/test",t,makeMeAPie);
     $("#pieChart").show();
   }
     
@@ -43,7 +43,7 @@ function init()
 
   if(breadcrumb['day']===undefined)
   {
-    getAjaxData("testarea","http://localhost/compta/welcome/test2",t,foo);
+    getAjaxData("testarea","/compta/welcome/test2",t,foo);
     $("#barsChart").show();
   }
     
@@ -51,7 +51,7 @@ function init()
     $("#barsChart").hide();
 
 
-  getAjaxData("example","http://localhost/compta/welcome/test3",t,foo2);
+  getAjaxData("example","/compta/welcome/test3",t,foo2);
   var plotarea = $("#plotarea");
   plotarea.unbind("plotclick");
   plotarea.bind("plotclick", function(event, pos, obj) {

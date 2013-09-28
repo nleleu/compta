@@ -28,7 +28,7 @@ function getMembers()
 {
   var t = [];
   t['communityId']=$("#communityId").val();
-  getAjaxData('',"http://localhost/compta/welcome/getCommunityMembers",t,refreshMembers)
+  getAjaxData('',"/compta/welcome/getCommunityMembers",t,refreshMembers)
 
 }
 

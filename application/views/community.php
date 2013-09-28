@@ -50,7 +50,7 @@ function init()
   if(breadcrumb['categoryName']===undefined)
   {
     //6
-    getAjaxData("pieChartCatPlot","http://localhost/compta/welcome/test6",t,makeMeAPie);
+    getAjaxData("pieChartCatPlot","/compta/welcome/test6",t,makeMeAPie);
     $("#pieChartCat").show();
   }
     
@@ -59,7 +59,7 @@ function init()
 
   if(breadcrumb['day']===undefined)
   {
-    getAjaxData("barsChartPlot","http://localhost/compta/welcome/test5",t,foo);
+    getAjaxData("barsChartPlot","/compta/welcome/test5",t,foo);
     $("#barsChart").show();
   }
     
@@ -70,7 +70,7 @@ function init()
     if(breadcrumb['username']===undefined)
   {
 
-    getAjaxData("pieChartMembersPlot","http://localhost/compta/welcome/test7",t,makeMeAPie);
+    getAjaxData("pieChartMembersPlot","/compta/welcome/test7",t,makeMeAPie);
     $("#pieChartMembers").show();
   }
     
@@ -78,7 +78,7 @@ function init()
     $("#pieChartMembers").hide();
 
 
-  getAjaxData("example","http://localhost/compta/welcome/test4",t,tableCommunityInvoices);
+  getAjaxData("example","/compta/welcome/test4",t,tableCommunityInvoices);
   var pieChartMemberPlot = $("#pieChartMembersPlot");
   pieChartMemberPlot.unbind("plotclick");
   pieChartMemberPlot.bind("plotclick", function(event, pos, obj) {
