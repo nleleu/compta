@@ -84,7 +84,7 @@ class Model_Community extends Model {
 		$db = Database::instance();
 		$userID =  Auth::instance()->get_user()->id;
 		$request = 'SELECT c.label, c.id FROM communities c LEFT JOIN community_members cm ON c.id=cm.fk_community ';
-		$request.= ' WHERE cm.fk_community='.$userID;
+		$request.= ' WHERE cm.fk_user='.$userID;
 		
 
 		$query = $db->query(Database::SELECT,$request);
