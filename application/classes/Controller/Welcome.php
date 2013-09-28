@@ -175,7 +175,7 @@ class Controller_Welcome extends Controller {
 			if(Request::current()->post('password') == Request::current()->post('confirmPassword'))
 			{
 			try{
-				$user = ORM::factory('user');
+				$user = ORM::factory('User');
 				$user->username = Request::current()->post('username');
 				$user->email = Request::current()->post('email');
 				$user->password = Request::current()->post('password');
