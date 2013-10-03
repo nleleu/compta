@@ -173,7 +173,7 @@ function makeMeAPie(ajaxData,container)
 	for (var i = 0; i < rawData.length; i++) {
 		data[i] = {
 			label: rawData[i]['label'],
-			data: parseInt(rawData[i]['amount'],10)
+			data: parseFloat(rawData[i]['amount'])
 		}
 	} 
 
@@ -211,7 +211,7 @@ function foo(ajaxData,container,tooltipFormat,xaxisTickFormatetr)
 	for (var i = 0; i < rawData.length; i++) {
 
 		data[i] =  [
-parseInt(rawData[i]['label'],10),parseInt(rawData[i]['amount'],10)
+parseInt(rawData[i]['label'],10),parseFloat(rawData[i]['amount'])
 		]
 	} 
 

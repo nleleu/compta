@@ -8,8 +8,8 @@ class Model_Invoice extends Model {
 	public function create()
 	{	
 		$userID =  Auth::instance()->get_user()->id;
-		if(!is_null(Request::current()->post('payer'))
-		$userID =  is_null(Request::current()->post('payer');
+		if(!is_null(Request::current()->post('payer')))
+			$userID =  Request::current()->post('payer');
 
 		$date =  Request::current()->post('date');
 
