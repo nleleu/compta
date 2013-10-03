@@ -1,6 +1,6 @@
 
 
-var months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Novembre','Décembre'];
+var months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
 var days = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 
 
@@ -116,7 +116,7 @@ function setBreadcrumb()
 			
 		else if(name=='day')
 		{
-			$("#breadcrumb").append('<li id="'+name+'"" onclick="handleClickBreadcrumb(this)"><a href="#">'+getDayOfWeek(breadcrumb['year'],breadcrumb['month'],breadcrumb['day'])+'</a></li>');
+			$("#breadcrumb").append('<li id="'+name+'"" onclick="handleClickBreadcrumb(this)"><a href="#">'+getDayOfWeek(breadcrumb['year'],months[breadcrumb['month']-1],breadcrumb['day'])+'</a></li>');
 			nextLevel = null;
 			last = getDayOfWeek(breadcrumb['year'],breadcrumb['month'],breadcrumb['day']);
 		}
@@ -236,6 +236,11 @@ parseInt(rawData[i]['label'],10),parseFloat(rawData[i]['amount'])
 	$.plot('#'+container, [data], {
 		series: {
         bars:{ show: true,align:"center" }
+    },
+    yaxis:
+    {
+    	tickDecimals: 2
+
     },
     xaxis:
     {
