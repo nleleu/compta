@@ -59,7 +59,6 @@ class Model_CommunityInvoice extends Model {
 		$month =  Request::current()->post('month');
 		$day =  Request::current()->post('day');
 
-		$communityId = 1;
 
 
 		
