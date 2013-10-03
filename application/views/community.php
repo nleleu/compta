@@ -39,19 +39,20 @@ function drawBilan(ajaxData,container)
   var rawData = JSON.parse(ajaxData);
   var bilan = $('#bilan');
   bilan.html('');
-  for(var member in rawData['Grogicks']['bilan'])
+  var commName = $("select[name='communitySelector'] option:selected").text();
+  for(var member in rawData[commName]['bilan'])
   {
-    bilan.append(member+ " : "+rawData['Grogicks']['bilan'][member]+" € (");
+    bilan.append(member+ " : "+rawData[commName]['bilan'][member]+" € (");
       var first = true;
-    for(var member2 in rawData['Grogicks']['bilanDetails'][member])
+    for(var member2 in rawData[commName]['bilanDetails'][member])
     { 
       if(!first)
         bilan.append(",");
-      if(rawData['Grogicks']['bilanDetails'][member][member2]>=0)
+      if(rawData[commName]['bilanDetails'][member][member2]>=0)
         bilan.append("de ");
       else
         bilan.append("à ");
-      bilan.append(member2+" : "+rawData['Grogicks']['bilanDetails'][member][member2]+" €");
+      bilan.append(member2+" : "+rawData[commName]['bilanDetails'][member][member2]+" €");
       first = false;
 
     }
@@ -61,8 +62,8 @@ function drawBilan(ajaxData,container)
 
  bilan.append("</br>Résolution : </br>");
 bilan.append("<ul>");
- for (var item in rawData['solve']) {
-  bilan.append("<li>"+rawData['solve'][item]['from']+" doit "+rawData['solve'][item]['amount']+" € à "+rawData['solve'][item]['to']+"</li>");
+ for (var item in rawData[commName]['solve']) {
+  bilan.append("<li>"+rawData[commName]['solve'][item]['from']+" doit "+rawData[commName]['solve'][item]['amount']+" € à "+rawData[commName]['solve'][item]['to']+"</li>");
 
  }
     bilan.append("</ul>");
@@ -264,7 +265,7 @@ $(window).load(function(){
   <div class="form-group form-horizontal">
     <label for="communitySelector" class="control-label col-lg-4">Séléction d'une communauté</label>
     <div class="col-lg-3">
-<select class=" form-control " id="communitySelector" onchange="init()">
+<select class=" form-control " id="communitySelector" name="communitySelector" onchange="init()">
   <?php
 
     foreach ($communities as $value)
