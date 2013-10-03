@@ -33,6 +33,46 @@ function tableCommunityInvoices(ajaxData,container)
 
 }
 
+function drawBilan(ajaxData,container)
+{
+
+  var rawData = JSON.parse(ajaxData);
+  var bilan = $('#bilan');
+  bilan.html('');
+  for(var member in rawData['Grogicks']['bilan'])
+  {
+    bilan.append(member+ " : "+rawData['Grogicks']['bilan'][member]+" € (");
+      var first = true;
+    for(var member2 in rawData['Grogicks']['bilanDetails'][member])
+    { 
+      if(!first)
+        bilan.append(",");
+      if(rawData['Grogicks']['bilanDetails'][member][member2]>=0)
+        bilan.append("de ");
+      else
+        bilan.append("à ");
+      bilan.append(member2+" : "+rawData['Grogicks']['bilanDetails'][member][member2]+" €");
+      first = false;
+
+    }
+     
+     bilan.append(")</br>");
+  }
+
+ bilan.append("</br>Résolution : </br>");
+bilan.append("<ul>");
+ for (var item in rawData['solve']) {
+  bilan.append("<li>de "+rawData['solve'][item]['from']+" à "+rawData['solve'][item]['to']+" : "+rawData['solve'][item]['amount']+" €</li>");
+
+ }
+    bilan.append("</ul>");
+  
+
+
+
+}
+
+
 function init()
 {
 
@@ -77,6 +117,8 @@ function init()
   else
     $("#pieChartMembers").hide();
 
+
+  getAjaxData("","/compta/welcome/bilan",t,drawBilan);
 
   getAjaxData("example","/compta/welcome/test4",t,tableCommunityInvoices);
   var pieChartMemberPlot = $("#pieChartMembersPlot");
@@ -262,6 +304,18 @@ $(window).load(function(){
 <div class="ajaxcontent" id="barsChartPlot"></div>
 </div>
 </div>
+
+<div class="container">
+ <div class="page-header">
+  <h1>Bilan</h1>
+</div>
+<div id="bilan">
+</div>
+
+</div>
+
+
+
 
 <div class="container">
   <div id="table">

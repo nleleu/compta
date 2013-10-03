@@ -146,7 +146,7 @@ class Model_CommunityInvoice extends Model {
 			$y = (array)$bilanNeg;
 
 
-
+$results->solve = new ArrayObject();
 while(!empty($x) && !empty($y)) //http://stackoverflow.com/questions/1389431/how-to-check-if-object-is-empty-in-php
 {
 
@@ -161,7 +161,7 @@ while(!empty($x) && !empty($y)) //http://stackoverflow.com/questions/1389431/how
 	$tmp->from = $min;
 	$tmp->to = $max;
 	$tmp->amount = $adjust;
-	$results->solve = $tmp;	
+	$results->solve->append( $tmp);	
 	if($bilanNeg->$min+$adjust==0)
 	{
 		unset($bilanNeg->$min);
