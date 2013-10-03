@@ -62,7 +62,7 @@ function drawBilan(ajaxData,container)
  bilan.append("</br>Résolution : </br>");
 bilan.append("<ul>");
  for (var item in rawData['solve']) {
-  bilan.append("<li>de "+rawData['solve'][item]['from']+" à "+rawData['solve'][item]['to']+" : "+rawData['solve'][item]['amount']+" €</li>");
+  bilan.append("<li>"+rawData['solve'][item]['from']+" doit "+rawData['solve'][item]['amount']+" € à "+rawData['solve'][item]['to']+"</li>");
 
  }
     bilan.append("</ul>");

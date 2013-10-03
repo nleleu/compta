@@ -30,7 +30,7 @@ class Model_Invoice extends Model {
 		if(!is_null($date) && !is_null($amount) && !is_null($description))
 		{
 			$db = Database::instance();
-			$request = 'INSERT INTO Invoices (date,amount,description,fk_category,fk_user) VALUES(\''.$date.'\','.$amount.',\''.$description.'\','.$category.','.$userID.')';
+			$request = 'INSERT INTO invoices (date,amount,description,fk_category,fk_user) VALUES(\''.$date.'\','.$amount.',\''.$description.'\','.$category.','.$userID.')';
 			$query = $db->query(Database::INSERT,$request);
 
 			if(!is_null($community))
@@ -72,7 +72,7 @@ public function delete()
 		$request = 'DELETE FROM community_invoices WHERE fk_invoice='.$id ;
 		$query = $db->query(Database::DELETE,$request);
 
-		$request = 'DELETE FROM Invoices WHERE id='.$id ;
+		$request = 'DELETE FROM invoices WHERE id='.$id ;
 		$query = $db->query(Database::DELETE,$request);
 		unset($db);
 		return true;
