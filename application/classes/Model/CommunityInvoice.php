@@ -109,12 +109,12 @@ class Model_CommunityInvoice extends Model {
 		//Aparemment on se tape de l'initialisation de l'obj tab
 					if($m['beneficiary']==$u['username']  &&  $m['payer']!=$u['username'] )
 					{
-						$tab->$m['payer']-=(round($m['amount']-$m['reduction'])/$m['nb'],2);
+						$tab->$m['payer']-=round(($m['amount']-$m['reduction'])/$m['nb'],2);
 					}
 					else if($m['payer']==$u['username'] && $m['beneficiary']!=$u['username'])
 					{
 
-						$tab->$m['beneficiary']+=(round($m['amount']$m['reduction'])/$m['nb']-,2);
+						$tab->$m['beneficiary']+=round(($m['amount']-$m['reduction'])/$m['nb'],2);
 					}
 				}
 
