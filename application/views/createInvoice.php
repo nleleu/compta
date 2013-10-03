@@ -200,7 +200,7 @@ getMembers();
               <div class="controls">
                   <div class="input-group">
                   
-              <select class=" form-control " name ="payer" id="payer"  onchange="getMembers()">
+              <select class=" form-control " name ="payer" id="payer">
                 
               </select>
                   </div>
