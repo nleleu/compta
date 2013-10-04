@@ -42,9 +42,9 @@ function refreshMembers(ajaxData)
   var rawData = JSON.parse(ajaxData);
   for (var i = 0; i < rawData.length; i++) {
 
-    $('#beneficiaries').append('<label class="checkbox-inline"><input type="checkbox" id="'+rawData[i]['username']+'" name="'+rawData[i]['username']+'" value="'+rawData[i]['id']+'"> '+rawData[i]['username']+'</label>');
+    $('#beneficiaries').append('<label class="checkbox-inline"><input type="checkbox" id="'+rawData[i]['id']+'" name="'+rawData[i]['id']+'" value="'+rawData[i]['id']+'"> '+rawData[i]['username']+'</label>');
     if(rawData[i]['id']!= <?php echo $user->id; ?>)
-      $('#payer').append('<option value="'+rawData[i]['username']+'">'+rawData[i]['username']+'</option>');
+      $('#payer').append('<option value="'+rawData[i]['id']+'">'+rawData[i]['username']+'</option>');
 
   }
 

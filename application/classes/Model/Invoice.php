@@ -44,9 +44,9 @@ class Model_Invoice extends Model {
 				$subQuery = $db->query(Database::SELECT,$subRequest);
 				foreach($subQuery as $m)
 				{
-					if(!is_null(Request::current()->post($m['username'])))
+					if(!is_null(Request::current()->post($m['id'])))
 						{
-							$r = 'INSERT INTO community_invoice_beneficiaries (fk_community_invoice,fk_user) VALUES('.$query[0].','.Request::current()->post($m['username']).')';
+							$r = 'INSERT INTO community_invoice_beneficiaries (fk_community_invoice,fk_user) VALUES('.$query[0].','.$m['id'].')';
 							$q = $db->query(Database::INSERT,$r);
 						} 
 				}
